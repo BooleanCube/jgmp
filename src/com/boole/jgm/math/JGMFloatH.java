@@ -1,6 +1,6 @@
 package com.boole.jgm.math;
 
-public class JGMFloat32 {
+public class JGMFloatH {
 
     public static float min(float a, float b) { return Math.min(a, b); }
     public static float max(float a, float b) { return Math.max(a, b); }
