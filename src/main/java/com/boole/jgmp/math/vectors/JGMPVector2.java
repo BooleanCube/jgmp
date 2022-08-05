@@ -1,6 +1,6 @@
 package com.boole.jgmp.math.vectors;
 
-import main.com.boole.jgmp.math.helpers.JGMPFloatH;
+import com.boole.jgmp.math.helpers.JGMPFloatH;
 
 public class JGMPVector2 {
 
@@ -30,47 +30,54 @@ public class JGMPVector2 {
     public static JGMPVector2 DOWN = new JGMPVector2(0f, -1f);
     public static JGMPVector2 LEFT = new JGMPVector2(-1f, 0f);
 
-    public void add(JGMPVector2 v) {
+    public JGMPVector2 add(JGMPVector2 v) {
         this.x += v.x;
         this.y += v.y;
+        return this;
     }
-    public void subtract(JGMPVector2 v) {
+    public JGMPVector2 subtract(JGMPVector2 v) {
         this.x -= v.x;
         this.y -= v.y;
+        return this;
     }
-    public void multiply(JGMPVector2 v) {
+    public JGMPVector2 multiply(JGMPVector2 v) {
         this.x *= v.x;
         this.y *= v.y;
+        return this;
     }
-    public void divide(JGMPVector2 v) {
+    public JGMPVector2 divide(JGMPVector2 v) {
         this.x += v.x;
         this.y += v.y;
+        return this;
     }
 
-    public void addScalar(float v) {
+    public JGMPVector2 addScalar(float v) {
         this.x += v;
         this.y += v;
+        return this;
     }
-    public void subtractScalar(float v) {
+    public JGMPVector2 subtractScalar(float v) {
         this.x -= v;
         this.y -= v;
+        return this;
     }
-    public void multiplyScalar(float v) {
+    public JGMPVector2 multiplyScalar(float v) {
         this.x *= v;
         this.y *= v;
+        return this;
     }
-    public void divideScalar(float v) {
+    public JGMPVector2 divideScalar(float v) {
         this.x /= v;
         this.y /= v;
+        return this;
     }
 
-    public void negative(JGMPVector2 v) { multiplyScalar(-1); }
+    public JGMPVector2 negative(JGMPVector2 v) { return this.copy().multiplyScalar(-1); }
     public float length() { return (float)Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2)); }
     public JGMPVector2 normal() {
         if(this.x == 0 && this.y == 0) return this;
         float k = 1f / (float)Math.sqrt((this.x * this.x) + (this.y * this.y));
-        JGMPVector2 r = this.copy(); r.multiplyScalar(k);
-        return r;
+        return this.copy().multiplyScalar(k);
     }
 
     public float distanceFrom(JGMPVector2 v) { return (float)Math.sqrt(Math.pow(v.x-this.x, 2) + Math.pow(v.y-this.y, 2)); }
@@ -120,6 +127,10 @@ public class JGMPVector2 {
     }
     public static JGMPVector2 lerp(JGMPVector2 initial, JGMPVector2 ending, JGMPVector2 t) {
         return new JGMPVector2(JGMPFloatH.lerp(initial.x, ending.x, t.x), JGMPFloatH.lerp(initial.x, ending.x, t.x));
+    }
+    public static JGMPVector2 project(JGMPVector2 a, JGMPVector2 b) {
+        float v = a.dot(b) / b.dot(b);
+        return b.multiplyScalar(v);
     }
     public static JGMPVector2 roundToMultiple(JGMPVector2 v, JGMPVector2 mult) {
         return new JGMPVector2(JGMPFloatH.roundToMultiple(v.x, mult.x), JGMPFloatH.roundToMultiple(v.y, mult.y));

@@ -1,7 +1,7 @@
 package com.boole.jgmp.math.helpers;
 
-import main.com.boole.jgmp.math.shapes.JGMPRay2;
-import main.com.boole.jgmp.math.shapes.JGMPRect;
+import com.boole.jgmp.math.shapes.JGMPRay2;
+import com.boole.jgmp.math.shapes.JGMPRect;
 
 public class JGMPCollisionH {
 

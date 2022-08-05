@@ -1,6 +1,6 @@
 package com.boole.jgmp.math.shapes;
 
-import main.com.boole.jgmp.math.vectors.JGMPVector2;
+import com.boole.jgmp.math.vectors.JGMPVector2;
 
 public class JGMPRect {
 

@@ -1,15 +1,14 @@
 package com.boole.jgmp.math.shapes;
 
-import main.com.boole.jgmp.math.helpers.JGMPFloatH;
-import main.com.boole.jgmp.math.vectors.JGMPVector2;
+import com.boole.jgmp.math.vectors.JGMPVector2;
 
 public class JGMPRay2 {
 
-    public float dis;
+    public float len;
     public JGMPVector2 start, end, dir;
 
     public JGMPRay2(float dis, JGMPVector2 start, JGMPVector2 dir) {
-        this.dis = dis;
+        this.len = dis;
         this.start = start;
         this.dir = dir;
         generateEndPoint();
@@ -19,14 +18,18 @@ public class JGMPRay2 {
         this.start = start;
         this.end = end;
         this.dir = dir;
-        this.dis = start.distanceFrom(end);
+        this.len = start.distanceFrom(end);
     }
 
     private void generateEndPoint() {
         float angle = dir.angle();
-        float x = (float)Math.cos(angle) * dis;
-        float y = (float)Math.sin(angle) * dis;
+        float x = (float)Math.cos(angle) * len;
+        float y = (float)Math.sin(angle) * len;
         end = new JGMPVector2(x, y);
+    }
+
+    public float distanceFrom(JGMPVector2 point) {
+        
     }
 
 }
