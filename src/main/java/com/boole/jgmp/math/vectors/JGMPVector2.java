@@ -72,7 +72,7 @@ public class JGMPVector2 {
         return this;
     }
 
-    public JGMPVector2 negative(JGMPVector2 v) { return this.copy().multiplyScalar(-1); }
+    public JGMPVector2 negative() { return this.copy().multiplyScalar(-1); }
     public float length() { return (float)Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2)); }
     public JGMPVector2 normal() {
         if(this.x == 0 && this.y == 0) return this;

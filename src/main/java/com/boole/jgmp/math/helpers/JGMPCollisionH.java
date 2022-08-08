@@ -1,5 +1,6 @@
 package com.boole.jgmp.math.helpers;
 
+import com.boole.jgmp.math.shapes.JGMPCircle;
 import com.boole.jgmp.math.shapes.JGMPRay2;
 import com.boole.jgmp.math.shapes.JGMPRect;
 
@@ -28,10 +29,29 @@ public class JGMPCollisionH {
         float s = (-s1y * (a.start.x-b.start.x) + s1x * (a.start.y-b.start.y)) / v;
         float t = (s2x * (a.start.y-b.start.y) - s2y * (a.start.x-b.start.x)) / v;
 
-        if(s>=0 && s<=1 && t>=0 && t<=1) return true;
-        return false;
+        return s >= 0 && s <= 1 && t >= 0 && t <= 1;
     }
 
-    // TODO: ADD JGMPCircle COLLISION CHECKS
+    public static boolean isColliding(JGMPCircle a, JGMPRay2 b) {
+        float distance = b.shortestDistanceFrom(a.center);
+        return a.radius >= distance;
+    }
+
+    public static boolean isTangent(JGMPCircle a, JGMPRay2 b) {
+        float distance = b.shortestDistanceFrom(a.center);
+        return a.radius == distance;
+    }
+
+    public static boolean isColliding(JGMPCircle a, JGMPRect b) {
+        return isColliding(a, b.top) ||
+                isColliding(a, b.right) ||
+                isColliding(a, b.bottom) ||
+                isColliding(a, b.left);
+    }
+
+    public static boolean isColliding(JGMPCircle a, JGMPCircle b) {
+        float distance = a.center.distanceFrom(b.center);
+        return (a.radius+b.radius) >= distance;
+    }
 
 }
