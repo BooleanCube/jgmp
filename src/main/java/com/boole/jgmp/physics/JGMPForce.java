@@ -5,8 +5,8 @@ import com.boole.jgmp.math.vectors.JGMPVector2;
 import java.util.List;
 
 /**
- * Kinematics Force Model using 2D Physics. <br>
- * Includes a lot of Vector Math and Dynamic Forces calculations.
+ * Kinematics Force Physics Model for the JGMP Library. <br>
+ * Includes Vector Math and 2D Kinematics calculations.
  */
 public class JGMPForce {
 

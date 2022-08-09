@@ -3,7 +3,7 @@ package com.boole.jgmp.physics;
 import com.boole.jgmp.math.vectors.JGMPVector2;
 
 /**
- * Static Gravity Force Model for Universal Gravity. <br>
+ * Static Universal Gravity Force Model for the JGMP Library. <br>
  * If you plan to use more than 1 Gravity Model for your application, you will have to create your
  * own Static Gravity Model for each different one.
  */
