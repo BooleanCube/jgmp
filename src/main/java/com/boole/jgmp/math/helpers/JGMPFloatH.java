@@ -2,6 +2,10 @@ package com.boole.jgmp.math.helpers;
 
 import com.boole.jgmp.math.vectors.JGMPVector2;
 
+/**
+ * Floats Helper with useful algorithms and tools for optimized usage of floats and floating point mathematical calculations. <br>
+ * Includes Linear Algebra types and functions such as Vector Math.
+ */
 public class JGMPFloatH {
 
     private static float epsilon = 0.0001f;

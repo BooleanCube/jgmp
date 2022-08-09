@@ -4,6 +4,11 @@ import com.boole.jgmp.math.shapes.JGMPCircle;
 import com.boole.jgmp.math.shapes.JGMPRay2;
 import com.boole.jgmp.math.shapes.JGMPRect;
 
+/**
+ * Collision Checking Helper with optimized collision checking methods between provided shapes in the JGMP Library. <br>
+ * Provided Shapes: {@link JGMPRay2}, {@link JGMPCircle}, {@link JGMPRect} <br>
+ * Source Code for the Shape Models can be found in <a href="https://github.com/BooleanCube/jgmp/tree/main/src/main/java/com/boole/jgmp/math/shapes">~/com/boole/jgmp/math/shapes/</a>
+ */
 public class JGMPCollisionH {
 
     /**

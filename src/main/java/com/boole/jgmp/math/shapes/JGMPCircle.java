@@ -2,12 +2,47 @@ package com.boole.jgmp.math.shapes;
 
 import com.boole.jgmp.math.vectors.JGMPVector2;
 
+/**
+ * Circle Shape Model for the JGMP Library <br>
+ * Contains lots of useful tools and functionalities to use related to circles.
+ */
 public class JGMPCircle {
 
+    /**
+     * Center of the 2D Circle
+     */
     public JGMPVector2 center;
-    public float radius, diameter;
 
-    public JGMPRay2 up, right, down, left;
+    /**
+     * Radius float value of the 2D Circle
+     */
+    public float radius;
+
+    /**
+     * Diameter float value of the 2D Circle (2*radius)
+     */
+    public float diameter;
+
+    /**
+     * Ray pointing to the top of the circle from the center.
+     */
+    public JGMPRay2 up;
+
+    /**
+     * Ray pointing to the right of the circle from the center.
+     */
+    public JGMPRay2 right;
+
+    /**
+     * Ray pointing to the bottom of the circle from the center.
+     */
+    public JGMPRay2 down;
+
+    /**
+     * Ray pointing to the left of the circle from the center.
+     */
+    public JGMPRay2 left;
+
     private void initRays() {
         up = new JGMPRay2(radius, center, JGMPVector2.UP);
         right = new JGMPRay2(radius, center, JGMPVector2.RIGHT);
@@ -17,6 +52,11 @@ public class JGMPCircle {
 
     private void init() { initRays(); }
 
+    /**
+     * Initialize {@link JGMPCircle} objects
+     * @param center circle center point vector2
+     * @param radius radius float value
+     */
     public JGMPCircle(JGMPVector2 center, float radius) {
         this.center = center;
         this.radius = radius;
@@ -24,7 +64,18 @@ public class JGMPCircle {
         init();
     }
 
+    /**
+     * Calculates the total amount of surface area of the 2D Circle. <br>
+     * Surface Area = π * Radius^2
+     * @return area float value
+     */
     public float area() { return (float)(Math.PI*Math.pow(radius,2)); }
+
+    /**
+     * Calculates the perimeter of the 2D Circle. <br>
+     * Perimeter = π * Diameter
+     * @return perimeter float value.
+     */
     public float perimeter() { return (float)Math.PI*diameter; }
 
 }
