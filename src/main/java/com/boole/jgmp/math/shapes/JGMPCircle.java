@@ -3,43 +3,44 @@ package com.boole.jgmp.math.shapes;
 import com.boole.jgmp.math.vectors.JGMPVector2;
 
 /**
- * Circle Shape Model for the JGMP Library <br>
+ * 2D Circle Shape Model for the JGMP Library. <br>
  * Contains lots of useful tools and functionalities to use related to circles.
  */
 public class JGMPCircle {
 
     /**
-     * Center of the 2D Circle
+     * Center of the {@link JGMPCircle}
      */
     public JGMPVector2 center;
 
     /**
-     * Radius float value of the 2D Circle
+     * Radius float value of the {@link JGMPCircle}
      */
     public float radius;
 
     /**
-     * Diameter float value of the 2D Circle (2*radius)
+     * Diameter float value of the {@link JGMPCircle}<br>
+     * Diameter = 2 * Radius
      */
     public float diameter;
 
     /**
-     * Ray pointing to the top of the circle from the center.
+     * Ray pointing to the top of the {@link JGMPCircle} from the center.
      */
     public JGMPRay2 up;
 
     /**
-     * Ray pointing to the right of the circle from the center.
+     * Ray pointing to the right of the {@link JGMPCircle} from the center.
      */
     public JGMPRay2 right;
 
     /**
-     * Ray pointing to the bottom of the circle from the center.
+     * Ray pointing to the bottom of the {@link JGMPCircle} from the center.
      */
     public JGMPRay2 down;
 
     /**
-     * Ray pointing to the left of the circle from the center.
+     * Ray pointing to the left of the {@link JGMPCircle} from the center.
      */
     public JGMPRay2 left;
 
@@ -65,14 +66,14 @@ public class JGMPCircle {
     }
 
     /**
-     * Calculates the total amount of surface area of the 2D Circle. <br>
+     * Calculates the total amount of surface area of the {@link JGMPCircle}. <br>
      * Surface Area = π * Radius^2
      * @return area float value
      */
     public float area() { return (float)(Math.PI*Math.pow(radius,2)); }
 
     /**
-     * Calculates the perimeter of the 2D Circle. <br>
+     * Calculates the perimeter of the {@link JGMPCircle}. <br>
      * Perimeter = π * Diameter
      * @return perimeter float value.
      */
