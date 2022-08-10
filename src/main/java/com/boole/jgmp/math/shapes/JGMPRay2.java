@@ -63,8 +63,8 @@ public class JGMPRay2 {
 
     private void generateEndPoint() {
         float angle = direction.angle();
-        float x = (float)Math.cos(angle) * length;
-        float y = (float)Math.sin(angle) * length;
+        float x = this.start.x + (float)Math.cos(angle) * length;
+        float y = this.start.y + (float)Math.sin(angle) * length;
         end = new JGMPVector2(x, y);
     }
 
@@ -148,7 +148,7 @@ public class JGMPRay2 {
         float b = this.start.y - (m*this.start.x);
 
         // Normal LINE
-        float nm = -1/m;
+        float nm = -1f/m;
         float nb = point.y - (nm*point.x);
 
         // Intersection Point
