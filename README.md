@@ -24,7 +24,49 @@ You can learn more about the library through the [documentation](https://boolean
 You can also find a simple wiki page [here](https://github.com/BooleanCube/jgmp/wiki)
 
 ## Installation
+[![](https://jitpack.io/v/BooleanCube/jgmp.svg)](https://jitpack.io/#BooleanCube/jgmp)
 
+Latest Releases: https://github.com/BooleanCube/jgmp/releases
+
+Replace `VERSION` with the latest release in Jitpack. If you want to use SNAPSHOTS, please follow the instructions on the [Jitpack page](https://jitpack.io/#BooleanCube/jgmp)
+
+### Maven
+#### Dependency
+```xml
+<dependencies>
+    <dependency>
+        <groupId>com.github.BooleanCube</groupId>
+        <artifactId>jgmp</artifactId>
+        <version>VERSION</version>
+    </dependency>
+</dependencies>
+```
+#### Repository
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+### Gradle
+#### Dependency
+```gradle
+dependencies {
+    implementation 'com.github.BooleanCube:jgmp:VERSION'
+}
+```
+#### Repository
+```gradle
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
 
 ----
 
