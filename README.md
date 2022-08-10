@@ -15,7 +15,13 @@ I have been developing many games using Unity and other popular game engines. Ho
 - Object Velocity Model
 
 ## Documentation
+`com/boole/math/helpers/` contains many helpful tools and utilities (float management and collision detection) <br>
+`com/boole/math/shapes/` contains many shape models with useful utilities.
+`com/boole/math/vectors/` contains vector math model with a lot of vector mathematics and linear algebra functions.
+`com/boole/physics/` contains many useful 2D kinematics models for 2d game physics.
 
+You can learn more about the library through the [documentation](https://booleancube.github.io/projects/jgmp/main.html)
+You can also find a simple wiki page [here](https://github.com/BooleanCube/jgmp/wiki)
 
 ## Installation
 
