@@ -86,7 +86,7 @@ public class JGMPRay2 {
         // If the 2 lines are intersecting, the shortest distance between them is 0
         if(JGMPCollisionH.isIntersecting(this, line)) return 0;
 
-        // Generates copies so messing with values won't manipulte the original object
+        // Generates copies so messing with values won't manipulate the original object
         JGMPRay2 a = this.copy();
         JGMPRay2 b = line.copy();
 
