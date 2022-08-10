@@ -147,6 +147,8 @@ public class JGMPRay2 {
         float m = (this.end.y-this.start.y)/(this.end.x-this.start.x);
         float b = this.start.y - (m*this.start.x);
 
+        if(m == 0) return Math.abs(point.y-b);
+
         // Normal LINE
         float nm = -1f/m;
         float nb = point.y - (nm*point.x);
