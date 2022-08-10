@@ -16,8 +16,8 @@ I have been developing many games using Unity and other popular game engines. Ho
 
 ## Documentation
 `com/boole/math/helpers/` contains many helpful tools and utilities (float management and collision detection) <br>
-`com/boole/math/shapes/` contains many shape models with useful utilities.
-`com/boole/math/vectors/` contains vector math model with a lot of vector mathematics and linear algebra functions.
+`com/boole/math/shapes/` contains many shape models with useful utilities. <br>
+`com/boole/math/vectors/` contains vector math model with a lot of vector mathematics and linear algebra functions. <br>
 `com/boole/physics/` contains many useful 2D kinematics models for 2d game physics.
 
 You can learn more about the library through the [documentation](https://booleancube.github.io/projects/jgmp/main.html)
