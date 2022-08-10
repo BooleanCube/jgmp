@@ -20,7 +20,7 @@ I have been developing many games using Unity and other popular game engines. Ho
 `com/boole/math/vectors/` contains vector math model with a lot of vector mathematics and linear algebra functions. <br>
 `com/boole/physics/` contains many useful 2D kinematics models for 2d game physics.
 
-You can learn more about the library through the [documentation](https://booleancube.github.io/projects/jgmp/main.html)
+You can learn more about the library through the [documentation](https://booleancube.github.io/projects/jgmp/main.html) <br>
 You can also find a simple wiki page [here](https://github.com/BooleanCube/jgmp/wiki)
 
 ## Installation
