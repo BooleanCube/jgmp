@@ -228,7 +228,11 @@ public class JGMPVector2 {
      * Angle of the {@link JGMPVector2} from the origin.
      * @return angle float value
      */
-    public float angle() { return (float)Math.atan2(-this.y, this.x); }
+    public float angle() {
+        float radians = -(float)Math.atan2(-this.y, this.x);
+        if(radians < 0f) radians += 2f*JGMPVector2.LEFT.angle();
+        return radians;
+    }
 
     /**
      * Reflects the current {@link JGMPVector2}
@@ -399,5 +403,13 @@ public class JGMPVector2 {
      * @return boolean indicating whether the 2 {@link JGMPVector2} are approximately equal
      */
     public boolean approxEqual(JGMPVector2 v) { return JGMPFloatH.approxEqual(this.x, v.x) && JGMPFloatH.approxEqual(this.y, v.y); }
+
+    /**
+     * Returns a string representation of the {@link JGMPVector2} object
+     * @return string representation
+     */
+    public String toString() {
+        return "(" + this.x + ", " + this.y + ")";
+    }
 
 }

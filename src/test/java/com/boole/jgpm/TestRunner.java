@@ -18,10 +18,10 @@ public class TestRunner {
 
     public static void main(String[] args) {
         runCollisionHTests();
-//        runFloatHTests();
-//        runCircleTests();
-//        runRay2Tests();
-//        runRectTests();
+        runFloatHTests();
+        runCircleTests();
+        runRay2Tests();
+        runRectTests();
 //        runVelocityTests();
 //        runForcesTests();
 //        runGravityTests();

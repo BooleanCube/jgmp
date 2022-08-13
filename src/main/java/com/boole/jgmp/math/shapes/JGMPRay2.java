@@ -1,6 +1,7 @@
 package com.boole.jgmp.math.shapes;
 
 import com.boole.jgmp.math.helpers.JGMPCollisionH;
+import com.boole.jgmp.math.helpers.JGMPFloatH;
 import com.boole.jgmp.math.vectors.JGMPVector2;
 
 /**
@@ -72,7 +73,7 @@ public class JGMPRay2 {
      * Copies the {@link JGMPRay2} object's contents into another object.
      * @return {@link JGMPRay2} 2D Ray copy
      */
-    public JGMPRay2 copy() { return new JGMPRay2(this.start, this.end); }
+    public JGMPRay2 copy() { return new JGMPRay2(this.start.copy(), this.end.copy()); }
 
     /**
      * Calculates the shortest distance between the current line segment and a different given line segment. <br>
@@ -118,20 +119,19 @@ public class JGMPRay2 {
             point.x -= rx;
             point.y -= ry;
         }
-        float angle = fpb.angle();
-        JGMPVector2 center = fp;
+        float angle = (float)(2*Math.PI)-fpb.angle();
         for(JGMPVector2 point : all) {
-            if(point == center) continue;
+            if(point.approxEqual(JGMPVector2.ZERO)) continue;
             point.rotate(angle);
         }
 
         // Constructing the perpendicular / normal lines at each of the 2 selected points
-        JGMPRay2 nl1 = new JGMPRay2(1000000f, fp, JGMPVector2.UP);
-        JGMPRay2 nl2 = new JGMPRay2(1000000f, sp, JGMPVector2.UP);
+        JGMPRay2 nl1 = new JGMPRay2(new JGMPVector2(fp.x, -100000000f), new JGMPVector2(fp.x, 100000000f));
+        JGMPRay2 nl2 = new JGMPRay2(new JGMPVector2(sp.x, -100000000f), new JGMPVector2(sp.x, 100000000f));
 
         // Finding the minimum distance between all 3 line segments.
         if(JGMPCollisionH.isIntersecting(b, nl1)) minDistance = Math.min(minDistance, b.shortestDistanceFrom(fp));
-        if(JGMPCollisionH.isIntersecting(b, nl2)) minDistance = Math.min(minDistance, b.shortestDistanceFrom(sp));
+        if(JGMPCollisionH.isIntersecting(b, nl2)) minDistance = Math.min(minDistance, a.shortestDistanceFrom(sp));
 
         return minDistance;
     }
@@ -143,11 +143,15 @@ public class JGMPRay2 {
      * @return shortest distance float value
      */
     public float shortestDistanceFrom(JGMPVector2 point) {
+        // Checking Vertical Line case with no slope
+        if(JGMPFloatH.approxEqual(this.start.x, this.end.x)) return Math.abs(this.start.x-point.x);
+
         // Given LINE
         float m = (this.end.y-this.start.y)/(this.end.x-this.start.x);
         float b = this.start.y - (m*this.start.x);
 
-        if(m == 0) return Math.abs(point.y-b);
+        // Checking Horizontal Line case with slope as 0
+        if(JGMPFloatH.approxEqual(m, 0)) return Math.abs(point.y-b);
 
         // Normal LINE
         float nm = -1f/m;

@@ -163,7 +163,7 @@ public class JGMPRect {
      * Returns the surface area of the {@link JGMPRect}
      * @return surface area float value
      */
-    public float area() { return size.dot(new JGMPVector2(this.y, 0)); }
+    public float area() { return this.height()*this.width(); }
 
     /**
      * Returns the perimeter of the {@link JGMPRect}
