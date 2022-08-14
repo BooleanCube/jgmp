@@ -11,7 +11,7 @@ public class JGMPCircleTest {
 
     @Test
     public void circleTests() {
-        JGMPCircle circle = new JGMPCircle(JGMPVector2.ZERO, 5f);
+        JGMPCircle circle = new JGMPCircle(JGMPVector2.zero(), 5f);
 
         Assert.assertEquals("error in radius assignment", 5f, circle.radius, epsilon);
         Assert.assertEquals("error in diameter assignment", 10f, circle.diameter, epsilon);

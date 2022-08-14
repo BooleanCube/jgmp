@@ -55,42 +55,42 @@ public class JGMPVector2 {
     /**
      * Static ZERO {@link JGMPVector2} (0,0)
      */
-    public static JGMPVector2 ZERO = new JGMPVector2(0f, 0f);
+    public static JGMPVector2 zero() { return new JGMPVector2(0f, 0f); }
 
     /**
      * Static ONE {@link JGMPVector2} (1,1)
      */
-    public static JGMPVector2 ONE = new JGMPVector2(1f, 1f);
+    public static JGMPVector2 one() { return new JGMPVector2(1f, 1f); }
 
     /**
      * Static INFINITY {@link JGMPVector2} (3.4028235E38,3.4028235E38)
      */
-    public static JGMPVector2 INF = new JGMPVector2(Float.MAX_VALUE, Float.MAX_VALUE);
+    public static JGMPVector2 inf() { return new JGMPVector2(Float.MAX_VALUE, Float.MAX_VALUE); }
 
     /**
      * Static NEGATIVE INFINITY {@link JGMPVector2} (1.4E-45,1.4E-45)
      */
-    public static JGMPVector2 NEG_INF = new JGMPVector2(Float.MIN_VALUE, Float.MIN_VALUE);
+    public static JGMPVector2 neg_inf() { return new JGMPVector2(Float.MIN_VALUE, Float.MIN_VALUE); }
 
     /**
      * Static UP Direction {@link JGMPVector2} (0,1)
      */
-    public static JGMPVector2 UP = new JGMPVector2(0f, 1f);
+    public static JGMPVector2 up() { return new JGMPVector2(0f, 1f); }
 
     /**
      * Static RIGHT Direction {@link JGMPVector2} (1,0)
      */
-    public static JGMPVector2 RIGHT = new JGMPVector2(1f, 0f);
+    public static JGMPVector2 right() { return new JGMPVector2(1f, 0f); }
 
     /**
      * Static DOWN Direction {@link JGMPVector2} (0,-1)
      */
-    public static JGMPVector2 DOWN = new JGMPVector2(0f, -1f);
+    public static JGMPVector2 down() { return new JGMPVector2(0f, -1f); }
 
     /**
      * Static LEFT Direction {@link JGMPVector2} (-1,0)
      */
-    public static JGMPVector2 LEFT = new JGMPVector2(-1f, 0f);
+    public static JGMPVector2 left() { return new JGMPVector2(-1f, 0f); }
 
     /**
      * Vector addition for 2 {@link JGMPVector2}
@@ -230,7 +230,7 @@ public class JGMPVector2 {
      */
     public float angle() {
         float radians = -(float)Math.atan2(-this.y, this.x);
-        if(radians < 0f) radians += 2f*JGMPVector2.LEFT.angle();
+        if(radians < 0f) radians += 2f*JGMPVector2.left().angle();
         return radians;
     }
 

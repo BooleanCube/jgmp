@@ -12,10 +12,10 @@ public class JGMPCollisionHTest {
 
     @Test
     public void collisionTests() {
-        JGMPCircle circle = new JGMPCircle(JGMPVector2.ZERO, 5);
+        JGMPCircle circle = new JGMPCircle(JGMPVector2.zero(), 5);
         JGMPRect rect = new JGMPRect(0f, 0f, 6f, 6f);
         JGMPRay2 ray = new JGMPRay2(new JGMPVector2(-5f, -5f), new JGMPVector2(5f, 5f));
-        JGMPRay2 tangent = new JGMPRay2(4, new JGMPVector2(-2f,-5f), JGMPVector2.RIGHT);
+        JGMPRay2 tangent = new JGMPRay2(4, new JGMPVector2(-2f,-5f), JGMPVector2.right());
 
         Assert.assertTrue("Circle vs Rectangle", JGMPCollisionH.isColliding(circle, rect));
         Assert.assertFalse("Circle vs Ray Tangent", JGMPCollisionH.isTangent(circle, ray));

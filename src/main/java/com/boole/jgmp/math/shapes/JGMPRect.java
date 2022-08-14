@@ -96,10 +96,10 @@ public class JGMPRect {
      */
     public JGMPRay2 left;
     private void initSides() {
-        top = new JGMPRay2(size.x, topLeft, JGMPVector2.RIGHT);
-        right = new JGMPRay2(size.y, bottomRight, JGMPVector2.UP);
-        bottom = new JGMPRay2(size.x, bottomLeft, JGMPVector2.RIGHT);
-        left = new JGMPRay2(size.y, bottomLeft, JGMPVector2.UP);
+        top = new JGMPRay2(size.x, topLeft, JGMPVector2.right());
+        right = new JGMPRay2(size.y, bottomRight, JGMPVector2.up());
+        bottom = new JGMPRay2(size.x, bottomLeft, JGMPVector2.right());
+        left = new JGMPRay2(size.y, bottomLeft, JGMPVector2.up());
     }
 
     private void init() { initPoints(); initCenter(); initSize(); initSides(); }
@@ -169,6 +169,6 @@ public class JGMPRect {
      * Returns the perimeter of the {@link JGMPRect}
      * @return perimeter float value
      */
-    public float perimeter() { return 2*(size.dot(JGMPVector2.ONE)); }
+    public float perimeter() { return 2*(size.dot(JGMPVector2.one())); }
 
 }

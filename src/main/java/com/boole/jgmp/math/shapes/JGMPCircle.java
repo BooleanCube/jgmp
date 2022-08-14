@@ -45,10 +45,10 @@ public class JGMPCircle {
     public JGMPRay2 left;
 
     private void initRays() {
-        up = new JGMPRay2(radius, center, JGMPVector2.UP);
-        right = new JGMPRay2(radius, center, JGMPVector2.RIGHT);
-        down = new JGMPRay2(radius, center, JGMPVector2.DOWN);
-        left = new JGMPRay2(radius, center, JGMPVector2.LEFT);
+        up = new JGMPRay2(radius, center, JGMPVector2.up());
+        right = new JGMPRay2(radius, center, JGMPVector2.right());
+        down = new JGMPRay2(radius, center, JGMPVector2.down());
+        left = new JGMPRay2(radius, center, JGMPVector2.left());
     }
 
     private void init() { initRays(); }

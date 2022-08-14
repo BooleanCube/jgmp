@@ -12,7 +12,7 @@ public class JGMPRectTest {
     @Test
     public void rectangleTests() {
         JGMPRect rect = new JGMPRect(0, 0, 5, 5);
-        JGMPRect rect2 = new JGMPRect(JGMPVector2.ONE, new JGMPVector2(3, 4));
+        JGMPRect rect2 = new JGMPRect(JGMPVector2.one(), new JGMPVector2(3, 4));
 
         Assert.assertTrue("error in center init", rect.center.approxEqual(new JGMPVector2(2.5f, -2.5f)));
         Assert.assertTrue("error in point init", rect.bottomRight.approxEqual(new JGMPVector2(5f, -5f)));

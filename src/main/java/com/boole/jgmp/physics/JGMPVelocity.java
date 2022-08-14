@@ -39,7 +39,7 @@ public class JGMPVelocity {
      * Resets the {@link JGMPVelocity} to 0 and sets the object in rest.
      */
     public void stopVelocity() {
-        this.direction = JGMPVector2.ZERO;
+        this.direction = JGMPVector2.zero();
         this.velocity = 0f;
     }
 

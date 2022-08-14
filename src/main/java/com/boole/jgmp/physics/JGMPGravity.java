@@ -19,7 +19,7 @@ public class JGMPGravity {
      * Universal Static Gravity Force Model that uses the acceleration set. <br>
      * Default acceleration = 9.8 m/s^2
      */
-    public final static JGMPForce gravity = new JGMPForce(JGMPVector2.DOWN, acceleration);
+    public final static JGMPForce gravity = new JGMPForce(JGMPVector2.down(), acceleration);
 
     /**
      * Static function to set the acceleration value for all the objects in this Gravity Field.

@@ -11,11 +11,11 @@ public class JGMPVector2Test {
     @Test
     public void vectorTests() {
         JGMPVector2 v1 = new JGMPVector2(1f, 2f);
-        JGMPVector2 v2 = JGMPVector2.LEFT;
+        JGMPVector2 v2 = JGMPVector2.left();
 
-        Assert.assertEquals("error in dot()", 3f, v1.dot(JGMPVector2.ONE), epsilon);
+        Assert.assertEquals("error in dot()", 3f, v1.dot(JGMPVector2.one()), epsilon);
         Assert.assertEquals("error in dot()", 2f, v1.dot(new JGMPVector2(v1.y, 0f)), epsilon);
-        Assert.assertEquals("error in cross()", 3f, v1.dot(JGMPVector2.ONE), epsilon);
+        Assert.assertEquals("error in cross()", 3f, v1.dot(JGMPVector2.one()), epsilon);
         Assert.assertEquals("error in angle()", (float)Math.PI, v2.angle(), epsilon);
 
         v1.rotate((float)Math.PI);

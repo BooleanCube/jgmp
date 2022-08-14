@@ -62,14 +62,14 @@ public class JGMPFloatH {
      */
     public static float bezierInterp1D(JGMPVector2 initial, JGMPVector2 ending, float r) {
         JGMPVector2[] points = new JGMPVector2[]{
-                JGMPVector2.ZERO,
+                JGMPVector2.zero(),
                 initial,
                 ending,
-                JGMPVector2.ONE
+                JGMPVector2.one()
         };
         JGMPVector2 point = bezierInterp2D(points, r);
 
-        return point.dot(JGMPVector2.UP);
+        return point.dot(JGMPVector2.up());
     }
 
     /**

@@ -98,9 +98,9 @@ public class JGMPRay2 {
         float minDistance = Float.MAX_VALUE;
 
         // Finding the shortest distance between 2 points of the 2 line segments
-        JGMPVector2 fp = JGMPVector2.ZERO;
+        JGMPVector2 fp = JGMPVector2.zero();
         JGMPVector2 fpb;
-        JGMPVector2 sp = JGMPVector2.ZERO;
+        JGMPVector2 sp = JGMPVector2.zero();
         for(JGMPVector2 p1 : fps) {
             for(JGMPVector2 p2 : sps) {
                 float distance = p1.distanceFrom(p2);
@@ -121,7 +121,7 @@ public class JGMPRay2 {
         }
         float angle = (float)(2*Math.PI)-fpb.angle();
         for(JGMPVector2 point : all) {
-            if(point.approxEqual(JGMPVector2.ZERO)) continue;
+            if(point.approxEqual(JGMPVector2.zero())) continue;
             point.rotate(angle);
         }
 
