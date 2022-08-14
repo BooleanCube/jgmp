@@ -22,7 +22,7 @@ public class TestRunner {
         runCircleTests();
         runRay2Tests();
         runRectTests();
-//        runVelocityTests();
+        runVector2Tests();
 //        runForcesTests();
 //        runGravityTests();
 //        runVelocityTests();

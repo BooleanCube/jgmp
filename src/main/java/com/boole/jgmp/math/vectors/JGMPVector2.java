@@ -254,7 +254,9 @@ public class JGMPVector2 {
     }
 
     /**
-     * Rotating the current {@link JGMPVector2} by the given angle
+     * Rotating the current {@link JGMPVector2} by the given angle. <br>
+     * <i>This functions assumes the center of rotation is the origin (0, 0).</i> <br>
+     * Rotates the point by using the dot and cross products of the sine and cosine values of the angle.
      * @param angle angle float value
      */
     public void rotate(float angle) {
