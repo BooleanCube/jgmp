@@ -1,6 +1,5 @@
 package com.boole.jgpm;
 
-import com.boole.jgmp.math.vectors.JGMPVector2;
 import com.boole.jgpm.math.helpers.JGMPCollisionHTest;
 import com.boole.jgpm.math.helpers.JGMPFloatHTest;
 import com.boole.jgpm.math.shapes.JGMPCircleTest;
@@ -41,7 +40,7 @@ public class TestRunner {
         System.out.println("Float Helper Testing =>");
         for(Failure failure : result.getFailures())
             System.out.println("---> " + failure.toString());
-        System.out.println(result.wasSuccessful() ? "Successful!" : "Failed!");
+        System.out.println(result.wasSuccessful() ? "Successful!\n" : "Failed!\n");
     }
 
     static void runCircleTests() {
