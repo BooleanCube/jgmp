@@ -16,15 +16,18 @@ import org.junit.runner.notification.Failure;
 public class TestRunner {
 
     public static void main(String[] args) {
+        // Run Mathematics Tests
         runCollisionHTests();
         runFloatHTests();
         runCircleTests();
         runRay2Tests();
         runRectTests();
         runVector2Tests();
-//        runForcesTests();
-//        runGravityTests();
-//        runVelocityTests();
+
+        // Run Physics Tests
+        runForcesTests();
+        runGravityTests();
+        runVelocityTests();
     }
 
     static void runCollisionHTests() {
@@ -40,7 +43,7 @@ public class TestRunner {
         System.out.println("Float Helper Testing =>");
         for(Failure failure : result.getFailures())
             System.out.println("---> " + failure.toString());
-        System.out.println(result.wasSuccessful() ? "Successful!\n" : "Failed!\n");
+        System.out.println(result.wasSuccessful() ? "Successful!" : "Failed!");
     }
 
     static void runCircleTests() {

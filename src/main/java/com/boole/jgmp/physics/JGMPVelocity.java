@@ -19,10 +19,12 @@ public class JGMPVelocity {
     public float velocity;
 
     /**
-     * Initialize {@link JGMPVelocity} object with the initial velocity.
-     * @param initialVelocity initial velocity an object starts with.
+     * Initialize {@link JGMPVelocity} object with the initial velocity and direction.
+     * @param initialVelocity initial velocity an object starts with and initialDirection initial direction
+     *                        an object starts with.
      */
-    public JGMPVelocity(float initialVelocity) {
+    public JGMPVelocity(JGMPVector2 initialDirection, float initialVelocity) {
+        this.direction = initialDirection;
         this.velocity = initialVelocity;
     }
 

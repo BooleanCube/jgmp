@@ -35,7 +35,7 @@ public class JGMPForce {
      * Copies the {@link JGMPForce} object into another {@link JGMPForce} object and returns it.
      * @return copied {@link JGMPForce} object
      */
-    public JGMPForce copy() { return new JGMPForce(this.direction, this.force); }
+    public JGMPForce copy() { return new JGMPForce(this.direction.copy(), this.force); }
 
     /**
      * Returns the sum of 2 forces, to calculate the net force between 2 different forces on an object. <br>
@@ -44,8 +44,8 @@ public class JGMPForce {
      * @return net force of the 2 forces added onto each other
      */
     public JGMPForce addForce(JGMPForce force) {
-        JGMPVector2 current = this.direction.multiplyScalar(this.force); // End Point of the Force Ray
-        JGMPVector2 addition = force.direction.multiplyScalar(this.force); // End Point of the Force Ray
+        JGMPVector2 current = this.direction.copy().multiplyScalar(this.force); // End Point of the Force Ray
+        JGMPVector2 addition = force.copy().direction.multiplyScalar(force.force); // End Point of the Force Ray
         JGMPVector2 netForce = current.add(addition); // Adding up the end points of the forces
         JGMPVector2 dir = new JGMPVector2((float)Math.cos(netForce.angle()), (float)Math.sin(netForce.angle()));
         return new JGMPForce(dir, netForce.length());
@@ -57,9 +57,9 @@ public class JGMPForce {
      * @param forces list of all {@link JGMPForce} to be added.
      * @return net force of the list of forces added onto each other
      */
-    public JGMPForce netForce(List<JGMPForce> forces) {
-        JGMPForce netForce = forces.get(0);
-        for(int i=1; i<forces.size(); i++) netForce = netForce.addForce(forces.get(i));
+    public static JGMPForce netForce(List<JGMPForce> forces) {
+        JGMPForce netForce = forces.get(0).copy();
+        for(int i=1; i<forces.size(); i++) netForce = netForce.addForce(forces.get(i).copy());
         return netForce;
     }
 
@@ -71,6 +71,14 @@ public class JGMPForce {
         JGMPForce oppositeForce = this.copy();
         oppositeForce.direction = oppositeForce.direction.negative();
         return oppositeForce;
+    }
+
+    /**
+     * String representation of the {@link JGMPForce} object
+     * @return {@link String} representation
+     */
+    public String toString() {
+        return force + " " + direction;
     }
 
 }

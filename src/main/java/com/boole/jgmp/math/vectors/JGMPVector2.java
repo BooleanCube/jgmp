@@ -408,7 +408,7 @@ public class JGMPVector2 {
 
     /**
      * Returns a string representation of the {@link JGMPVector2} object
-     * @return string representation
+     * @return {@link String} representation
      */
     public String toString() {
         return "(" + this.x + ", " + this.y + ")";
