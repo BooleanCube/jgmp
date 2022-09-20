@@ -20,6 +20,7 @@ public class JGMPVelocity {
 
     /**
      * Initialize {@link JGMPVelocity} object with the initial velocity and direction.
+     * @param initialDirection initial direction for which the velocity is headed towards.
      * @param initialVelocity initial velocity an object starts with and initialDirection initial direction
      *                        an object starts with.
      */

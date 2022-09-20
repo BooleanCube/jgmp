@@ -101,7 +101,7 @@ public class JGMPFloatH {
      * @param fmax max float capacity
      * @param tmin t min float capacity
      * @param tmax t max float capacity
-     * @return
+     * @return remapping float values
      */
     public static float remap(float fval, float fmin, float fmax, float tmin, float tmax) {
         float t = inverseLerp(fmin, fmax, fval);
