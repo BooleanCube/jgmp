@@ -24,7 +24,7 @@ public class JGMPForce {
     /**
      * Initialize {@link JGMPForce} object representing a force done on an object.
      * @param direction direction of the {@link JGMPForce}
-     * @param force maginute of the {@link JGMPForce}
+     * @param force magnitude of the {@link JGMPForce}
      */
     public JGMPForce(JGMPVector2 direction, float force) {
         this.direction = direction;
